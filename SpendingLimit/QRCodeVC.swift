@@ -28,7 +28,7 @@ class QRCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UISear
         let searchQuery : String = self.searchBar.text!
         let newSearchQuery = searchQuery.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
-        let endPoint = NSURL(string: "http://api.walmartlabs.com/v1/search?query=\(newSearchQuery)&format=json&apiKey=nq9g72p4pba3a87m223mr5ye")
+        let endPoint = NSURL(string: "http://api.walmartlabs.com/v1/search?query=\(newSearchQuery)&format=json&apiKey={{YourAPIKey}}")
         
         let data = NSData(contentsOfURL: endPoint!)
         

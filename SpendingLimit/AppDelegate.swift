@@ -34,12 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        GMSServices.provideAPIKey("AIzaSyCcMuRrqGzTPLyBeaVdY-C0tuwoDSVSu0o")
+        GMSServices.provideAPIKey("{{YourGoogleMapAPIKey}}")
         
         let searchQuery = "christmas"
         
         let newSearchQuery = searchQuery.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        let endPoint = NSURL(string: "http://api.walmartlabs.com/v1/search?query=\(newSearchQuery)&format=json&apiKey=nq9g72p4pba3a87m223mr5ye")
+        let endPoint = NSURL(string: "http://api.walmartlabs.com/v1/search?query=\(newSearchQuery)&format=json&apiKey={{YourAPIKey}}")
         let data = NSData(contentsOfURL: endPoint!)
 
         if let json:NSDictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)) as? NSDictionary {
